@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script> 
+        // var aPromise = fetch("https://jsonplaceholder.typicode.com/posts") // fetch API returns a promise, by default it is a GET request
+        // // fetch is a web API, not part of JavaScript, it is used to make network requests, it returns a promise that resolves to the response of the request
+
+        // aPromise.then(function(response) { // This function is called when the promise is resolved
+        //     let data =  response.json(); // this returns a promise that resolves to the JSON data
+        //     // response.json() is a method that parses the response body as JSON, it is also asynchronous and returns a promise
+        //     console.log(data); // This will log the promise object, not the data
+        //     data.then(posts => {
+        //         console.log(posts); // This will log the data returned by the fetch function
+        //     });
+        //     // This returns another promise that resolves to the JSON data
+        // }).then(function(data) {
+        //     console.log("Data fetched successfully:", data); // This will log the data returned by the fetch function
+        // }).catch(function(error) { // This function is called when the promise is rejected
+        //     console.error("Error fetching data:", error);
+        // });
+
+
+
+        async function getData() {
+            try {
+                let response = await fetch("https://jsonplaceholder.typicode.com/posts"); // fetch API returns a promise
+                let data = await response.json(); // this returns a promise that resolves to the JSON data
+
+                // after await only dependent code should be there, it waits for the promise to resolve
+                console.log("Data fetched successfully:", data); // This will log the data returned by the fetch function
+            } catch (error) {
+                console.error("Error fetching data:", error);
+            }
+        }
+        getData();
+
+        async function LoadPosts() {
+            var response = await fetch("https://jsonplaceholder.typicode.com/posts");
+            if(response.ok){ // Check if the response is successful
+                // response.ok is true if the status code is in the range 200-299
+                var posts = await response.json();
+                console.log("Posts loaded successfully:", posts);
+                
+                var list = document.getElementById("postList");
+                for (const post of posts){
+                    var newEelm = document.createElement("li")
+                    newEelm.innerText = post.title; 
+                    list.appendChild(newEelm);
+                }
+            
+            } else {
+                throw new Error("Failed to load posts: " + response.status);
+            }
+        } 
+
+        LoadPosts().catch(error => {
+            console.error("Error loading posts:", error);
+        });
+            
+
+        
+    </script>
+</head>
+<body>
+    <ul id="postList"></ul>
+</body>
+</html>

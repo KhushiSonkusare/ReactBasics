@@ -31,3 +31,8 @@ function GetData(callback){
 
 
 }
+
+
+// in axios, we can use the .then() method to handle the response, we can also use the .catch() method to handle errors
+// in fetch, we can use the .then() method to handle the response, we can also use the .catch() method to handle errors
+// axios handles promises internally
