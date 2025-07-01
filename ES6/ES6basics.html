@@ -30,6 +30,38 @@
         var cars = ["Ferrari", "Red Bull", "Mercedes"];
         var newCars = [...cars, "McLaren", "Alpine"]; // Spread operator to create a new array
         console.log(newCars); // ["Ferrari", "Red Bull", "Mercedes", "McLaren", "Alpine"]
+
+        var person = {name: "Lewis Hamilton", team: "Mercedes"};
+        var newPerson = {...person, age: 36}; // Spread operator to create a new object, sequentially adding a new property
+        console.log(newPerson); // {name: "Lewis Hamilton", team: "Mercedes", age: 36}
+
+        // destructuring - Array and Object
+        var companies = ["Ferrari", "Red Bull", "Mercedes"];
+        var [first, second, third, fourth = "Mclaren"] = companies; // Array destructuring, undefined for fourth as it doesn't exist, default value "Mclaren" is assigned
+        // console.log(first, second, third, fourth); // Ferrari Red Bull Mercedes undefined
+        console.log(first, second, third, fourth); // Ferrari Red Bull Mercedes Mclaren
+
+        var player = {name: "Charles Leclerc", age: 26, team: "Ferrari"};
+        var{Name, Age, Team} = player; // Object destructuring, case-sensitive -> undefined variables
+        console.log(Name, Age, Team); // undefined undefined undefined
+        var {name, age, team, country = "Monaco"} = player; // Object destructuring, country defaults to "Monaco" if not present
+        console.log(name, age, team, country); // Charles Leclerc 26 Ferrari Monaco 
+
+
+        function PrintPlayer({name, age, team}) {
+            console.log(`Player: ${name}, Age: ${age}, Team: ${team}`);
+        }
+        
+        var playerInfo = {name: "Carlos Sainz", age: 28, team: "Ferrari", 
+            currentDetails:{
+            currentTeam: "Ferrari",
+            currentPosition: "Driver"
+        }};
+
+        var {currentDetails: {currentTeam, currentPosition}} = playerInfo; // drilling down into nested object destructuring
+        console.log(currentTeam, currentPosition); // Ferrari Driver
+
+
     </script>
 </head>
 <body>
