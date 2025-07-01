@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        
+        console.log(x); // undefined, because the declaration is hoisted but not the initialization
+        var x = 5; // Hoisting: variable declaration is moved to the top
+
+        console.log(y); // ReferenceError: Cannot access 'y' before initialization 
+        let y = 10;
+
+        //const PI; // SyntaxError: Missing initializer in const declaration
+        //console.log(PI); // This line will not execute due to the error above
+
+        const z = 15;// correctly initialized constant
+        console.log(z); // 15
+
+        z = 20; // TypeError: Assignment to constant variable, cannot reassign a constant
+
+        const player = {name: "Charles Leclerc", age: 26};
+        player.age = 27; // Allowed, object properties can be changed, but the reference cannot be changed
+        console.log(player); // {name: "Charles Leclerc", age: 27}
+
+        player = {name: "Max Verstappen", age: 25}; // TypeError: Assignment to constant variable, cannot reassign a constant
+
+        // Spread operator example- Object and Array
+        var cars = ["Ferrari", "Red Bull", "Mercedes"];
+        var newCars = [...cars, "McLaren", "Alpine"]; // Spread operator to create a new array
+        console.log(newCars); // ["Ferrari", "Red Bull", "Mercedes", "McLaren", "Alpine"]
+    </script>
+</head>
+<body>
+    Hello, ES6 Basics!
+</body>
+</html>
