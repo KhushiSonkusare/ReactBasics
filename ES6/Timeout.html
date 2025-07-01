@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        console.log("Started ...");
+
+        //JavaScript is single-threaded, meaning it can only execute one piece of code at a time.
+        //setTimeout is a way to schedule a function to be executed after a certain period of time, without blocking the main thread.
+        //The code inside setTimeout will be executed after the specified delay, allowing the rest of the code to run first.
+        setTimeout(() =>{ // method given by web browser, not JavaScript, it is created and kept aside 
+            console.log("Timeout executed after 2 seconds");
+        }, 2000); // This will execute after 2000 milliseconds (2 seconds)
+        console.log("End of script");
+
+        // call stack -> console.log("Started ...") -> setTimeout (pushed out to be handled by WEB API) -> console.log("End of script") -> setTimeout callback (after 2 seconds)
+        // after time is completed, the callback function is pushed to the task queue
+        // event loop checks the call stack, if it is empty, it will take the callback from the task queue and push it to the call stack
+        // this is how JavaScript handles asynchronous code, allowing it to be non-blocking
+
+
+        console.log("Hwllo");
+        setTimeout(()=>{
+            console.log("Timeout executed after 0 second");
+        }, 0); 
+        console.log("End of script after 0 second timeout");
+        // Sequence of execution:  Hwllo -> End of script after 0 second timeout -> Timeout executed after 0 second
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
