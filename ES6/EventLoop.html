@@ -4,10 +4,31 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <script src="./GetData2.js"></script>
     <script>
         //DOM is also a web API, so it is not part of JavaScript, but it is used to manipulate the HTML document
 
-        
+        console.log("Started ...");
+        // var data = GetData();
+        // console.log(data); // This will log the data returned by the GetData function, 
+        // // undefined at first because the function is asynchronous and returns a promise
+
+        // GetData(function(responsePosts) {// callback function to handle the response
+        //     console.log(responsePosts); // This will log the data returned by the GetData function after it is resolved
+        // });
+        // GetData2.js
+        var aPromise = GetData(); // GetData returns a promise, it has callback for handling the response
+        console.log(aPromise); // This will log the promise object, not the data, because
+        aPromise.then(function(response){ // promise is resolved
+            // This function is called when the promise is resolved
+            console.log(response);
+        },
+        function(error){ // promise is rejected
+            // This function is called when the promise is rejected
+            console.error("Error fetching data:", error);
+        });
+        console.log("End of script");
+
     </script>
 </head>
 <body>
