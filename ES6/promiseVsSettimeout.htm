@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script>
+    // PRomises have a higher priority than setTimeout
+    /// Promises are executed in the microtask queue, while setTimeout is executed in the macrotask queue
+    // This means that promises are executed before setTimeout, even if setTimeout is called first
+    console.log("Start");
+    const promise = new Promise((resolve, reject) => {
+        resolve("Promise resolved");
+    });
+</script>
+<body>
+    
+</body>
+</html>
