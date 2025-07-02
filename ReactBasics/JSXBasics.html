@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/17.0.2/umd/react.production.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/17.0.2/umd/react-dom.production.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.26.0/babel.min.js"></script>
+</head>
+<body>
+    <div id="root"></div>
+
+    <script type="text/jsx">
+        var sectionElement = (
+            <section>
+                <h1>JSX Basics</h1>
+                <p>This is a simple JSX example.</p>
+                <ul>
+                    <li>React uses JSX syntax.</li>
+                    <li>JSX allows HTML-like syntax in JavaScript.</li>
+                    <li>JSX is compiled to JavaScript by Babel.</li>
+                </ul>
+            </section>
+        );
+
+        ReactDOM.render(
+            sectionElement,
+            document.getElementById('root')
+        ); // babel.min.js:24 You are using the in-browser Babel transformer. Be sure to precompile your scripts for production
+    </script>
+</body>
+</html>
