@@ -1,0 +1,49 @@
+{
+  "courses": [
+    {
+      "id": "1",
+      "title": "React",
+      "price": 5000,
+      "likes": 400,
+      "rating": 5,
+      "imageUrl": "https://framerusercontent.com/images/N0xefN2fE6CCF4G2YhAg5exTHX8.png",
+      "description": "React is a JavaScript library for building user interfaces..."
+    },
+    {
+      "id": "2",
+      "title": "Redux",
+      "price": 4000,
+      "likes": 600,
+      "rating": 5,
+      "imageUrl": "https://negativeepsilon.com/media/attachments/blobs/2023/01/09/PNbZQxCiPVkNWzDNPDx24j_redux_rm05scp.png_riwC4kc5pLH7k1e5ReNajv_2FOQ.webp",
+      "description": "Redux is an open-source JavaScript library for managing application state..."
+    },
+    {
+      "id": "3",
+      "title": "Node",
+      "price": 6000,
+      "likes": 900,
+      "rating": 4,
+      "imageUrl": "https://imgs.search.brave.com/2NWyiGmFChxa8XR0Rr5dBW6WFOARC05UcJKfFdIV-nE/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9kNjA0/aDZwa2tvOXIwLmNs/b3VkZnJvbnQubmV0/L3dwLWNvbnRlbnQv/dXBsb2Fkcy8yMDI1/LzA0LzI0MTYzMTM1/L25vZGUtMTQwMHg4/MDAud2VicA",
+      "description": "Node.js is an open-source, cross-platform JavaScript runtime environment..."
+    },
+    {
+      "id": "4",
+      "title": "Angular",
+      "price": 5000,
+      "likes": 200,
+      "rating": 3,
+      "imageUrl": "https://ionic.io/blog/wp-content/uploads/2024/02/angular-feature-image-1.png",
+      "description": "Angular is a platform and framework for building single-page applications..."
+    },
+    {
+      "id": "5",
+      "title": "Flutter",
+      "price": 7000,
+      "likes": 700,
+      "rating": 4,
+      "imageUrl": "https://miro.medium.com/max/2000/1*PCKC8Ufml-wvb9Vjj3aaWw.jpeg",
+      "description": "Flutter is an open-source UI software development kit created by Google..."
+    }
+  ]
+}
